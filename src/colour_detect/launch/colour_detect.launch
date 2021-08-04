@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+    <arg name="topic" default="/camera/image"/>
+
+    <node 
+    name="colour_detect"
+    pkg="colour_detect"
+    type="colour_detect_node"
+    args="$(arg topic)"
+    output="screen">
+    
+    <remap from="image" to="$(arg topic)"/>
+    </node>
+</launch>
